@@ -1,4 +1,18 @@
 <?php
+	
+	/*
+	
+		Framework Guepardo - Desenvolvido inicialmente por Lucas Eduardo
+
+		link: https://github.com/ManualDeveloper/Guepardo
+
+	*/
+
+
+
+	//---------------------------------------------------------------------------------------
+
+
 
 	/*
 	* Define a versão do framework
