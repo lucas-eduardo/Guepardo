@@ -43,7 +43,7 @@
 	/*
 	* Diretivas da aplicação
 	*/
-	define('CAMINHO','http://localhost/Guepardo-master');
+	define('CAMINHO','http://localhost/Guepardo');
 
 	$caminho = str_replace('\\', '/', APP_PATCH);
 
