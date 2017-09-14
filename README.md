@@ -38,5 +38,26 @@ Vamos criar um controlador chamado ``` primeirocontroladorControlador.php ```, o
 
 * **Obs: Lembrando que o caminho é somente um exemplo, todos os controladores devem ser salvos dentro da pasta controladores.**
 
+```sh
+
+<?php
+
+  class primeirocontroladorControlador extends Controller{
+
+      public function indexAcao(){
+
+          echo "FrameWork Guepardo";
+
+      }
+
+  }
+
+?> 
+
+```
+
+Se tudo ocorreu corretamente, basta abrir no navegador, passando o controlador, por exemplo:
+```http://localhost/primeirocontrolador``` e o mesmo irá mostrar na tela: "FrameWork Guepardo". 
+
 [CODEIGNITER]: <https://codeigniter.com/>
 [COLIBRI]: <http://grupoorgany.com.br/>
