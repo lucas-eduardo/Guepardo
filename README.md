@@ -13,6 +13,8 @@ Com código 100% aberto, é possível que todos possam fazer melhorias no framew
 
 Atualmente o framework esta na versão 1.5.
 
+O principal desenvolvedor foi Lucas Eduardo, que atualmente esta se formando em Ciência da Computação e possue conhecimentos em PHP, AngularJs e Jquery.
+
 ---
 
 ## Para a utilização do Framework é necessário:
@@ -26,6 +28,15 @@ Primeiramente é preciso fazer o download do framework no github, após baixa-lo
 Tenho o servidor local XAMPP, irei colocar a pasta Guepardo-master que foi descompactado dentro do meu htdocs.
 Caso o link para acessar fique: http://localhost/Guepardo-master, não será necessário alterar mais nada para o funcionamento, caso o link for outro, basta abrir o arquivo ```sh Guepardo-master/app/framework/config/config.php``` e você terá que alterar o link do define CAMINHO para o seu link de acesso.
 Após isso ele irá abrir uma documentação do framework.
+
+---
+
+## Criando Controlador ( Controller )
+
+Ao criar um controlador o mesmo deve se extender da classe do controlador principal, o Controller.
+Vamos criar um controlador chamado ```sh primeirocontroladorControlador.php ```, o mesmo tem que ser salvo no seguinte caminho: aplicacao/app/site/controladores/.
+
+*Obs: Lembrando que o caminho é somente um exemplo, todos os controladores devem ser salvos dentro da pasta controladores.
 
 [CODEIGNITER]: <https://codeigniter.com/>
 [COLIBRI]: <http://grupoorgany.com.br/>
