@@ -2,6 +2,10 @@
 
 # Framework Guepardo #
 
+## Sobre o Guepardo
+
+---
+
 ## Para a utilização do Framework é necessário:
 
 - Servidor rodando Apache
