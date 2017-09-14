@@ -2,11 +2,10 @@
 
 # Framework Guepardo #
 
-### Lembrando que é necessário já estar com o angular js em sua página.
----
-## Para a utilização do JCrop é necessário ter o seguinte plugin:
+## Para a utilização do Framework é necessário:
 
-- [JCrop]
+- Ter um servidor rodando Apache
+- Php 5.6 ou superior
 ---
 ## Depois de fazer o download do plugin, basta colocar ele na sua página, por exemplo:
 ```sh
