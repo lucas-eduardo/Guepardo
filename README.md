@@ -4,10 +4,13 @@
 
 ## Para a utilização do Framework é necessário:
 
-- Ter um servidor rodando Apache
+- Servidor rodando Apache
 - Php 5.6 ou superior
 ---
-## Depois de fazer o download do plugin, basta colocar ele na sua página, por exemplo:
+## Primeiros Passos
+
+Primeiramente é preciso fazer o download do framework no github, após baixa-lo basta descompactar o mesmo no seu servidor, por exemplo:
+Tenho o servidor local XAMPP, irei colocar a pasta Guepardo-master que foi descompactado dentro do meu htdocs.
 ```sh
 <script src="ui-cropper-master/compile/minified/ui-cropper.js"></script>
 ```
