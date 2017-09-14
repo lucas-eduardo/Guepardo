@@ -1,4 +1,4 @@
-![CSCore Logo](https://images3.alphacoders.com/276/276219.jpg)
+![CSCore Logo](https://thumbs.dreamstime.com/b/luipaard-tatoegering-19051931.jpg)
 
 # Framework Guepardo #
 
