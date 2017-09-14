@@ -4,6 +4,15 @@
 
 ## Sobre o Guepardo
 
+O desenolvimento foi iniciado para auto-aprendizagem, para um melhor conhecimento com o php e saber as funcionalidades dos frameworks usando padrão MVC.
+A escolha do nome ser Guepardo é por ser um dos animais mais veloz do mundo!
+
+O framework Guepardo tem uma base forte nos frameworks CODEIGNITER e COLIBRI.
+
+Com código 100% aberto, é possível que todos possam fazer melhorias no framework, assim tornando o mesmo mais poderoso.
+
+Atualmente o framework esta na versão 1.5.
+
 ---
 
 ## Para a utilização do Framework é necessário:
