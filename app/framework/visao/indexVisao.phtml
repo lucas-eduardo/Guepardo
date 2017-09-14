@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html ng-app="Guepardo" ng-controller="Guepardo">
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title> Guepardo </title>
+
+		<meta name="description" content="Framework para facilitar no desenvolvimento web" />
+
+		<meta name="author" content="Lucas Eduardo">
+
+		<meta http-equiv="Content-Language" content="pt-br">
+
+		<meta property="og:locale" content="pt-br" >
+
+		<meta property="og:title" content="FrameWork Manual Developer" >
+
+		<meta property="og:site_name" content="FrameWork Manual Developer" >
+
+		<meta property="og:description" content="Framework para facilitar no desenvolvimento web">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="<?php echo CAMINHO; ?>/app/framework/externos/lib/bootstrap/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="<?php echo CAMINHO; ?>/app/framework/externos/lib/font-awesome/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="<?php echo CAMINHO; ?>/app/framework/externos/lib/animate-css/animate.min.css">
+
+		<link rel="stylesheet" href="<?php echo CAMINHO; ?>/app/framework/externos/css/style.css">
+
+	</head>
+
+	<body>
+
+		<div id="preloader"></div>
+			
+		<!-- Inclue o conteudo no miolo da página -->
+
+		<?php
+
+			// Carrega o cabecalho
+			require_once('cabecalho.phtml');
+
+			// Carrega o menu
+			require_once('menu.phtml');
+
+			// Carrega o conteudo dinamico
+			require_once( APP_PATCH.'visao/'.$visao_controlador.'/'.$visao_acao.'.phtml' );
+
+			// Carrega o footer
+			require_once('footer.phtml');
+
+		?>
+
+		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+		
+		<!-- #Inclue o conteudo no miolo da página -->
+
+		<script>
+			
+			var controlador = <?php echo $visao_controlador; ?>;
+
+		</script>
+
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/jquery/jquery.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/framework/angularjs/angular.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/framework/angularjs/i18n/angular-locale_pt-br.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/framework/angularjs/angular-animate.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/framework/angularjs/diretivas/ui-bootstrap-tpls-2.5.0.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/superfish/hoverIntent.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/superfish/superfish.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/morphext/morphext.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/wow/wow.min.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/stickyjs/sticky.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/lib/easing/easing.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/js/custom.js"></script>
+		<script src="<?php echo CAMINHO; ?>/app/framework/externos/js/app.js"></script>
+
+		<script>
+
+            $(document).ready(function(){
+                
+                $('[data-toggle="popover"]').popover();   
+                
+            });
+
+        </script>
+
+		<?php if( isset( $js ) ){ echo $js; }; ?>
+
+	</body>
+
+</html>

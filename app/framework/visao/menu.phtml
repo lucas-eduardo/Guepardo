@@ -1,0 +1,119 @@
+<header id="header">
+
+    <div class="container">
+
+        <nav id="nav-menu-container">
+
+            <ul class="nav-menu">
+
+                <li class="<?php echo ($visao_controlador == 'index')? 'menu-active' : ''; ?>">
+
+                    <a href="<?php echo CAMINHO; ?>">Sobre</a>
+
+                </li>
+
+                <li class="<?php echo ($visao_controlador == 'primeirospassos')? 'menu-active' : ''; ?>">
+
+                    <a href="<?php echo CAMINHO; ?>/primeirospassos">Primeiros passos</a>
+
+                </li>
+
+                <li class="menu-has-children <?php echo ($visao_controlador == 'entendacontrolador' || $visao_controlador == 'criarcontrolador')? 'menu-active' : ''; ?>"><a href="">Controlador</a>
+
+                    <ul>
+
+                        <li class="<?php echo ($visao_controlador == 'entendacontrolador')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/entendacontrolador">Entenda Controlador</a>
+
+                        </li>
+
+                        <li class="<?php echo ($visao_controlador == 'criarcontrolador')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/criarcontrolador">Criar Controlador</a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="menu-has-children <?php echo ($visao_controlador == 'entendamodelo' || $visao_controlador == 'criarmodelo')? 'menu-active' : ''; ?>"><a href="">Modelo</a>
+
+                    <ul>
+
+                        <li class="<?php echo ($visao_controlador == 'entendamodelo')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/entendamodelo">Entenda Modelo</a>
+
+                        </li>
+
+                        <li class="<?php echo ($visao_controlador == 'criarmodelo')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/criarmodelo">Criar Modelo</a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="menu-has-children <?php echo ($visao_controlador == 'entendavisao' || $visao_controlador == 'criarvisao' || $visao_controlador == 'passardadosvisao')? 'menu-active' : ''; ?>"><a href="">Visão</a>
+
+                    <ul>
+
+                        <li class="<?php echo ($visao_controlador == 'entendavisao')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/entendavisao">Entenda Visão</a>
+
+                        </li>
+
+                        <li class="<?php echo ($visao_controlador == 'criarvisao')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/criarvisao">Criar Visão</a>
+
+                        </li>
+
+                        <li class="<?php echo ($visao_controlador == 'passardadosvisao')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/passardadosvisao">Passar dados para Visão</a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="menu-has-children <?php echo ($visao_controlador == 'bdconfiguracao' || $visao_controlador == 'bdcrud')? 'menu-active' : ''; ?>"><a href="">Banco de Dados</a>
+
+                    <ul>
+
+                        <li class="<?php echo ($visao_controlador == 'bdconfiguracao')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/bdconfiguracao">Configuração</a>
+
+                        </li>
+
+                        <li class="<?php echo ($visao_controlador == 'bdcrud')? 'menu-active' : ''; ?>">
+
+                            <a href="<?php echo CAMINHO; ?>/bdcrud">CRUD e Outros</a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li>
+
+                    <a href="<?php echo CAMINHO; ?>/urlscaminhos">URLs e Caminhos</a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>

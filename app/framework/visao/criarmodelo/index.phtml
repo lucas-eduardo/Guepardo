@@ -1,0 +1,89 @@
+<section id="criarmodelo">
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h3 class="section-title">Criando o Modelo</h3>
+
+                <div class="section-title-divider"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12 criarmodelo-content">
+
+                <h2 class="criarmodelo-title">Criar Model</h2>
+
+                <p class="criarmodelo-text">
+
+                    Ao criar um modelo o mesmo deve se extender da classe do model principal, o <code>GU_Model</code>. <br>
+
+                    Vamos criar um modelo chamado <code><strong>primeiromodeloModelo.php</strong></code>, o mesmo tem que ser salvo no seguinte caminho: <code>aplicacao/app/site/modelos/primeiromodelo/</code> <br>
+                    <strong class="font12">*Obs: Lembrando que o caminho é somente um exemplo, todos os modelos devem ser salvos dentro da pasta modelos, subdividida com a pasta do nome do modelo.</strong>
+
+                    <br><br>
+
+                    <?php
+
+                        highlight_string('<?php
+
+class primeiromodeloModelo extends GU_Model{
+
+    public function guepardo(){
+
+        return echo "Guepardo - Modelo";
+
+    }
+
+}
+
+?>');
+
+                    ?> <br><br>
+
+                    O modelo é carregado nos métodos dos seus controladores, para carregar o modelo no controlador basta: <br><br>
+
+                    <?php
+
+                        highlight_string('<?php
+
+class primeirocontroladorControlador extends Controller{
+
+    public function indexAcao(){
+
+        // Carrega e instancia o modelo
+        $this->load->modelo( \'primeiromodelo\' );
+
+        // Acessa o método que esta no modelo
+        $this->primeiromodelo->guepardo();
+
+    }
+
+}
+
+?>');
+
+                    ?> <br><br>
+
+                    Se tudo ocorreu corretamente, basta abrir no navegador, passando o controlador, por exemplo: <br>
+                    <code>http://localhost/primeirocontrolador</code> e o mesmo irá mostrar na tela: "<strong>Guepardo - Model</strong>".
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

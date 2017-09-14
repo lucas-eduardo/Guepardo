@@ -1,0 +1,279 @@
+<section id="primeirospassos">
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h3 class="section-title">Primeiros Passos</h3>
+
+                <div class="section-title-divider"></div>
+
+                <p class="section-description">
+
+                    Depois de ter baixado o framework, você terá que seguir alguns passos para começar o desenvolvimento e deixa-lo configurado para você mesmo.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="menu-lateral">
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu"
+                        ng-class="{'active': pp.introducao}"
+                        ng-click="altera( 'introducao', 'pp' )"
+
+                    >Introdução</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': pp.criandoapp}"
+                        ng-click="altera( 'criandoapp', 'pp' )"
+
+                    >Criando App</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': pp.definindoconfig}"
+                        ng-click="altera( 'definindoconfig', 'pp' )"
+
+                    >Definindo Config</button>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-9 primeirospassos-content conteudo-lateral" ng-if="pp.introducao">
+
+                <h2 class="primeirospassos-title">Introdução</h2>
+
+                <p class="primeirospassos-text">
+
+                    O Guepardo trabalha com o padrão MVC ( Model - View - Controller ), seu funcionamento lembra muito bem o CODEIGNITER e o COLIBRI para quem já utilizou. <br>
+                    Por ele ser um framework open source, é possível fazer diversas melhorias e incrementações de ajudantes, biblioteca e outros.<br>
+                    Para alteração do framework, é preciso ter o foco em desempenho e facilidade do uso, para que todos os tipos de aplicações seja rapida e de fácil uso!
+
+                </p>
+
+            </div>
+
+            <div class="col-md-9 primeirospassos-content conteudo-lateral" ng-if="pp.criandoapp">
+
+                <h2 class="primeirospassos-title">Criando App</h2>
+
+                <p class="primeirospassos-text">
+
+                    Para dar ínicio, é necessário que você crie uma pasta da sua aplicação dentro da pasta <code>app</code>, ficando como a seguinte estrutura: <code>MinhaAplicacao/app/site</code>. <br>
+
+                    Foi usado a pasta <strong>site</strong> como exemplo, dentro da mesma, é preciso ter as seguintes pastas: <br>
+
+                    - <code>ajudantes</code> <br>
+
+                    - <code>bibliotecas</code> <br>
+
+                    - <code>config</code> <br>
+
+                    - <code>controladores</code> <br>
+
+                    - <code>externos</code> <br>
+
+                    - <code>logserro</code> <br>
+
+                    - <code>modelos</code> <br>
+
+                    - <code>visao</code> <br>
+
+                    <strong class="font12">Obs: Essas pastas podem ser copiadas da pasta framework!</strong><br>
+
+                    A única pasta que deve conter arquivos por padrão no ínicio, é a pasta <code>config</code>, ela irá possuir 3 (três) arquivos: <code>autocarregamento.php</code>, <code>bancodedados.php</code> e <code>config.php</code>. <br>
+                    Basta agora realizar as configurações necessárias e dar andamento nas aplicações!
+
+                </p>
+
+            </div>
+
+            <div class="col-md-9 primeirospassos-content conteudo-lateral" ng-if="pp.definindoconfig">
+
+                <h2 class="primeirospassos-title">Definindo Config</h2>
+
+                <p class="primeirospassos-text">
+
+                    As configurações necessárias para o ínicio de qualquer projeto, é mexido nos seguintes arquivos: <code>index.php</code> que se encontra na raiz e na pasta <code>config</code> da sua aplicação. <br>
+
+                    <h3>Entendo e configurando os arquivos</h3>
+
+                    <div class="panel panel-default">
+                        
+                        <div class="panel-heading">Arquivo da raiz da aplicação ( <code>index.php</code> )</div>
+                        <div class="panel-body">
+                            
+                            O arquivo <code>index.php</code> se encontra na raiz da aplicação, ele é responsável por referenciar o caminho do <code>framework</code> e da pasta <code>app</code>, toda aplicação é rodada a partir desse arquivo. <br>
+
+                            O única linha que você deve alterar, é a linha da variavel <code>application</code>, que ela diz qual pasta vai ter que iniciar dentro do <code>app</code>. <br><br>
+
+                            * No caso de exemplo, utilizamos <strong>site</strong>, então o arquivo <code>index.php</code> ficará da seguinte maneira: <br><br>
+
+                            <?php
+
+                                highlight_string('<?php
+
+    // Define o caminho do sistema/framework    
+    $system = "core";
+
+    // Define a aplicação padrão
+    $application = "app/site";
+
+    //Define os caminhos
+    define( "BASE_PATH", __DIR__ );
+    define( "DIRECTORY", basename( dirname( $_SERVER[\'PHP_SELF\'] ) ) );
+
+    // Inclue todo o framework
+    require_once("core/system/config.php");
+
+?>');
+
+                            ?>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default">
+                        
+                        <div class="panel-heading">Arquivo da pasta config ( <code>autocarregamento.php</code>, <code>bancodedados.php</code> e <code>config.php</code> )</div>
+                        <div class="panel-body">
+                            
+                            O arquivo <code>autocarregamento.php</code> é responsavel por auto-carregar os ajudantes e as bibliotecas, sem que tenha a necessidade de instancia-las varias vezes. <br><br>
+
+                            <?php
+
+                                highlight_string('<?php
+
+    $autocarregar[\'ajudante\'] = array();
+    $autocarregar[\'biblioteca\'] = array();
+
+?>');
+
+                            ?> <br><br>
+
+                            O arquivo <code>bancodedados.php</code> é responsavel por toda parte de conexão com o banco de dados, passando todas as configurações do banco de dados, o framework fica respnsavel de fazer a conexão. <br><br>
+
+                            <strong class="font12">* Obs: Caso sua aplicação não tenha conexão com o banco de dados, não é necerrário preencher!</strong> <br><br>
+
+                            <?php
+
+                                highlight_string('<?php
+
+    /*
+    * Configurações de conectividade com banco de dados
+    * Este arquivo contém as configurações necessárias para conexão com o banco de dados
+    */
+
+    $bd[\'host\'] = \'localhost\';
+
+    $bd[\'usuario\'] = \'root\';
+
+    $bd[\'senha\'] = \'\';
+
+    $bd[\'banco\'] = \'minhaaplicacao\';
+
+    $bd[\'driver\'] = \'mysql\';
+
+    $bd[\'prefixo\'] = \'\';
+
+?>');
+
+                            ?> <br><br>
+
+                            O arquivo <code>config.php</code> é responsavel por definir toda parte de diretivas do framework e da aplicação. <br><br>
+
+                            <?php
+
+                                highlight_string('<?php
+    
+    /*
+    * Diretivas do framework
+    */
+
+    // Se true, exibe informações de erro de transações do BD
+    define(\'ERR_DB\',true);
+
+    // Se true, exibe informações de erro de conexão do BD
+    define(\'ERR_CON\',true);
+
+    // Se true, grava logs de erro
+    define(\'ERR_LOGS\',true);
+
+    // Define o timezone
+    define("TIMEZONE", \'America/Sao_Paulo\');
+
+    // Caminho dos controladores
+    define(\'CONTROLADORES\', \'controladores/\');
+
+    // Caminho dos modelos
+    define(\'MODELOS\', \'modelos/\');
+
+    // Caminho das visões
+    define(\'VISAO\', \'visao/\');
+
+    // Caminho do ajudantes
+    define(\'AJUDANTES\',\'ajudantes/\');
+
+    // Permite passar automaticamente os valores da url para a visão
+    define(\'AUTOURLPAR_VISAO\',true);
+
+    // Define o nome da sessão
+    define(\'SESSAOAPP\', \'\' );
+
+
+
+    //---------------------------------------------------------------------------------------
+
+
+
+    /*
+    * Diretivas da aplicação
+    */
+    define(\'CAMINHO\',\'http://localhost/minhaaplicacao\');
+
+    $caminho = str_replace(\'\\\', \'/\', APP_PATCH);
+
+    define(\'DIRETORIOAPP\', $caminho);
+
+?>');
+
+                            ?>
+
+                        </div>
+
+                    </div>
+
+                    Fazendo toda essas configurações, basta começar a desenvolver!
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,65 @@
+<section id="criarvisao">
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h3 class="section-title">Criando a Visão</h3>
+
+                <div class="section-title-divider"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12 criarvisao-content">
+
+                <h2 class="criarvisao-title">Criar View</h2>
+
+                <p class="criarvisao-text">
+
+                    Ao criar uma visão, ela deve ser chamada pelo controlador para poder ser renderizada. <br>
+
+                    Para carrega a visão você deve usar o seguinte método no controlador: <code>$this->load->visao('arquivo.php');</code>, onde o <strong>arquivo</strong> é o nome da visão e o <strong>.php</strong> é a extensão do mesmo.
+
+                    <br><br>
+
+                    <?php
+
+                        highlight_string('<?php
+
+class primeirocontroladorControlador extends Controller{
+
+    public function indexAcao(){
+
+        $this->load->visao(\'index.php\');
+
+    }
+
+}
+
+?>');
+
+                    ?> <br><br>
+
+                    Se tudo ocorreu corretamente, basta abrir no navegador, passando o controlador, por exemplo: <br>
+                    <code>http://localhost/primeirocontrolador</code> e o mesmo irá renderizar a visão. <br><br>
+                    <strong class="font12">Lembrando que as visões são salvas dentro da pasta visão, exemplo: <code>aplicacao/app/site/visao/index.php</code></strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
