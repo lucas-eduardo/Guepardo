@@ -45,7 +45,21 @@ guepardo.controller('Guepardo', function($scope, $timeout){
 		"caminho": true,
 		"url": false
 
-	}
+	};
+
+	$scope.bli = {
+
+		"carregando": true,
+		"automatico": false
+
+	};
+
+	$scope.aju = {
+
+		"carregando": true,
+		"automatico": false
+
+	};
 
 	// Função que faz o scroll na tela.
 	angular.element(document).ready(function () {

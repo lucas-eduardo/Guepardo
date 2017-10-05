@@ -489,7 +489,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #passardadosvisao,
 #bdconfiguracao,
 #bdcrud,
-#urlscaminhos {
+#urlscaminhos,
+#bibliotecas,
+#ajudantes {
   background: #fff;
   padding: 80px 0;
 }
@@ -509,7 +511,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #passardadosvisao .passardadosvisao-content,
 #bdconfiguracao .bdconfiguracao-content,
 #bdcrud .bdcrud-content,
-#urlscaminhos .urlscaminhos-content {
+#urlscaminhos .urlscaminhos-content,
+#bibliotecas .bibliotecas-content,
+#ajudantes .ajudantes-content {
   background: #fff;
 }
 
@@ -524,7 +528,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #passardadosvisao .passardadosvisao-title,
 #bdconfiguracao .bdconfiguracao-title,
 #bdcrud .bdcrud-title,
-#urlscaminhos .urlscaminhos-title {
+#urlscaminhos .urlscaminhos-title,
+#bibliotecas .bibliotecas-title,
+#ajudantes .ajudantes-title {
   color: #333;
   font-weight: 700;
   font-size: 28px;
@@ -541,7 +547,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #passardadosvisao .passardadosvisao-text,
 #bdconfiguracao .bdconfiguracao-text,
 #bdcrud .bdcrud-text,
-#urlscaminhos .urlscaminhos-text {
+#urlscaminhos .urlscaminhos-text,
+#bibliotecas .bibliotecas-text,
+#ajudantes .ajudantes-text {
   line-height: 26px;
 }
 
@@ -556,7 +564,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #passardadosvisao .passardadosvisao-text:last-child,
 #bdconfiguracao .bdconfiguracao-text:last-child,
 #bdcrud .bdcrud-text:last-child,
-#urlscaminhos .urlscaminhos-text:last-child {
+#urlscaminhos .urlscaminhos-text:last-child,
+#bibliotecas .bibliotecas-text:last-child,
+#ajudantes .ajudantes-text:last-child {
   margin-bottom: 0;
 }
 
