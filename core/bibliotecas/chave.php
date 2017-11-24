@@ -16,7 +16,7 @@
 
 			$where[]= array( $coluna,'=',$chave,'');
 
-			$GU->bd->ler( $where );
+			$GU->bd->read( $where );
 
 			return $GU->bd->linhas;
 

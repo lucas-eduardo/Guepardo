@@ -1,8 +1,8 @@
 <?php
 
-	function checasessao( $ajax=null, $caminho ){
+	function checasessao( $ajax=false, $caminho ){
 
-		if( !isset( $_SESSION[ hash("sha512", SESSAOAPP )] ) && $ajax=='requisicaoajax' ){
+		if( !isset( $_SESSION[ hash("sha512", SESSAOAPP )] ) && $ajax ){
 
 			echo 'logout';
 

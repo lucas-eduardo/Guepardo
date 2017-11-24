@@ -51,7 +51,7 @@
 			require_once('menu.phtml');
 
 			// Carrega o conteudo dinamico
-			require_once( APP_PATCH.'visao/'.$visao_controlador.'/'.$visao_acao.'.phtml' );
+			require_once( APP_PATCH.'visao/'.$view_controlador.'/'.$view_acao.'.phtml' );
 
 			// Carrega o footer
 			require_once('footer.phtml');
@@ -64,7 +64,7 @@
 
 		<script>
 			
-			var controlador = <?php echo $visao_controlador; ?>;
+			var controlador = <?php echo $view_controlador; ?>;
 
 		</script>
 

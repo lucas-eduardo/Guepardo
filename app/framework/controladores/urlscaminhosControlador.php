@@ -10,7 +10,7 @@
 		
 			$parametros['acao']= $this->router->acao;
 
-            $this->load->visao('indexVisao.phtml', $parametros);
+            $this->load->view('indexVisao.phtml', $parametros);
 
         }
 

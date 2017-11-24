@@ -65,21 +65,21 @@
 		/*
 		* Carrega o arquivo view especificado
 		*/
-		public function visao( $nome_arquivo, $parametros=null, $caminho=null  ){
+		public function view( $nome_arquivo, $parametros=null, $caminho=null  ){
 
 			$GU =& obter_instancia();
 
 			// Converte os parametros em variaveis com prefixo
 			if( is_array($parametros) && count($parametros) >0 ){
 
-				extract($parametros, EXTR_PREFIX_ALL, 'visao');
+				extract($parametros, EXTR_PREFIX_ALL, 'view');
 
-				// Cria automaticamente as variaveis para visao
-				if( defined('AUTOURLPAR_VISAO') && AUTOURLPAR_VISAO ){
+			}
 
-					extract($GU->url->getParametros(), EXTR_PREFIX_ALL, 'visaoauto');
+			// Cria automaticamente as variaveis para view
+			if( defined('AUTOURLPAR_VISAO') && AUTOURLPAR_VISAO ){
 
-				}
+				extract($GU->url->getParametros(), EXTR_PREFIX_ALL, 'viewauto');
 
 			}
 
@@ -95,24 +95,24 @@
 
 			}
 
-			// Define o caminho a ser usado para a visao
-			$caminhovisao= ( !is_null( $caminho ) && !empty( $caminho ) )? $caminho : APP_PATCH ;
+			// Define o caminho a ser usado para a view
+			$caminhoview= ( !is_null( $caminho ) && !empty( $caminho ) )? $caminho : APP_PATCH ;
 
 			// Define o arquivo
-			$arquivo_visao= $caminhovisao.VISAO.$nome_arquivo;
+			$arquivo_view= $caminhoview.VISAO.$nome_arquivo;
 
 			// Insere o arquivo
 			try{
 
-				if(file_exists($arquivo_visao)){
+				if(file_exists($arquivo_view)){
 
-					return require_once($arquivo_visao);
+					return require_once($arquivo_view);
 
 					exit;
 
 				}else{
 
-					throw new Exception('O arquivo '.$arquivo_visao.' nao foi encontrado<br>');
+					throw new Exception('O arquivo '.$arquivo_view.' nao foi encontrado<br>');
 
 				}
 

@@ -28,7 +28,7 @@
 
                     Ao criar uma visão, ela deve ser chamada pelo controlador para poder ser renderizada. <br>
 
-                    Para carrega a visão você deve usar o seguinte método no controlador: <code>$this->load->visao('arquivo.php');</code>, onde o <strong>arquivo</strong> é o nome da visão e o <strong>.php</strong> é a extensão do mesmo.
+                    Para carrega a visão você deve usar o seguinte método no controlador: <code>$this->load->view('arquivo.php');</code>, onde o <strong>arquivo</strong> é o nome da visão e o <strong>.php</strong> é a extensão do mesmo.
 
                     <br><br>
 
@@ -40,7 +40,7 @@ class primeirocontroladorControlador extends Controller{
 
     public function indexAcao(){
 
-        $this->load->visao(\'index.php\');
+        $this->load->view(\'index.php\');
 
     }
 
