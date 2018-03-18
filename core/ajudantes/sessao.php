@@ -1,7 +1,8 @@
 <?php
 
 	// Inicia dados de sessão
-	function iniciaSessao( $tempo=null ){
+	function iniciaSessao( $tempo=null )
+	{
 		
 		// Define o tempo de vida
 		$inatividade= ( !is_null($tempo) )? $tempo*60 : 180*60 ;
@@ -25,10 +26,7 @@
 				
 			}
 
-		}
-
-		// Renova o tempo de limite
-		else{
+		}else{ // Renova o tempo de limite
 
 			$_SESSION['tempolimite'] = time();
 			
@@ -37,65 +35,45 @@
 	}
 
 
-
-	//---------------------------------------------------------------------------------------
-
-
-
 	// Cria sessão
-	function criaSessao( $nome, $valor ){
+	function criaSessao( $nome, $valor )
+	{
 
 		$_SESSION[$nome]= $valor;
 		
 	}
 
 
-
-	//---------------------------------------------------------------------------------------
-
-
-
 	// Altera sessão
-	function alteraSessao( $nome, $valor ){
+	function alteraSessao( $nome, $valor )
+	{
 
 		$_SESSION[$nome]= $valor;
 
 	}
 
 
-
-	//---------------------------------------------------------------------------------------
-
-
-
 	// Retorna uma sessão
-	function selecionaSessao( $nome ){
+	function selecionaSessao( $nome )
+	{
 
 		return $_SESSION[$nome];
 
 	}
 
 
-
-	//---------------------------------------------------------------------------------------
-
-
-
 	// Exclui sessão
-	function excluiSessao( $nome ){
+	function excluiSessao( $nome )
+	{
 
 		unset( $_SESSION[$nome] );
 
 	}
 
 
-
-	//---------------------------------------------------------------------------------------
-
-
-
 	// Verifica a existencia de uma sessão
-	function verificaSessao( $nome ){
+	function verificaSessao( $nome )
+	{
 
 		return isset( $_SESSION[$nome] );
 

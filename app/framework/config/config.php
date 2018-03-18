@@ -43,7 +43,17 @@
 	/*
 	* Diretivas da aplicação
 	*/
-	define('CAMINHO','http://localhost/Guepardo');
+	if( $_SERVER['HTTP_HOST'] == 'localhost' ){
+
+		define('CAMINHO','http://localhost/particular/guepardo');
+		define('EXTERNOS','http://localhost/particular/guepardo/app/framework/externos/');
+
+	}else{
+
+		define('CAMINHO','http://localhost/particular/guepardo');
+		define('EXTERNOS','http://localhost/particular/guepardo/app/framework/externos/');
+
+	}
 
 	$caminho = str_replace('\\', '/', APP_PATCH);
 

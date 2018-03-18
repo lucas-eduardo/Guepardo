@@ -3,7 +3,8 @@
 	/*
 	* Realiza a manipulação de imagens
 	*/
-	class GU_imagem{
+	class GU_imagem
+	{
 
 		// Caminho da imagem
 		protected $caminho;
@@ -21,13 +22,9 @@
 		protected $prefixothumb= 'thumb_';
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define o caminho da imagem
-		public function montaCaminho( $caminho ){
+		public function montaCaminho( $caminho )
+		{
 
 			$this->caminho= $caminho;
 
@@ -36,16 +33,12 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		/*
 		* Extrai e armazena a extensao de imagens
 		* invoca o metodo de criação de imagens
 		*/
-		public function montaImagem( $imagem, $cria=true ){
+		public function montaImagem( $imagem, $cria=true )
+		{
 
 			// Nome da imagem
 			$this->imagem= $imagem;
@@ -67,13 +60,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define um prefixo opcional para thumbnails de imagens o padrão é 'thumb_'
-		public function defineprefixoThumb( $prefixo ){
+		public function defineprefixoThumb( $prefixo )
+		{
 
 			$this->prefixothumb= $prefixo;
 
@@ -82,13 +71,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Cria uma nova imagem
-		protected function criaImagem( $nomedaimagem=null ){
+		protected function criaImagem( $nomedaimagem=null )
+		{
 
 			$nomedaimagem= ( is_null($nomedaimagem) )? $this->imagem : $nomedaimagem ;
 
@@ -111,13 +96,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Envia a imagem para o borwser ou arquivo
-		protected function enviaImagem( $imagem, $nomedaimagem=null ){
+		protected function enviaImagem( $imagem, $nomedaimagem=null )
+		{
 
 			$nomedaimagem= ( is_null($nomedaimagem) )? $this->imagem : $nomedaimagem ;
 
@@ -142,13 +123,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define valores em proporcao para largura e altura de uma imagem
-		public function proporcaoImagem( $comprimento,$altura ){
+		public function proporcaoImagem( $comprimento,$altura )
+		{
 
 			// Comprimento original da imagem
 			$largura_original= imagesx($this->imagemcriada);
@@ -169,13 +146,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Redimensiona uma imagem para um novo tamanhos
-		public function redimensionaImagem( $largura, $altura, $proporcao=null ){
+		public function redimensionaImagem( $largura, $altura, $proporcao=null )
+		{
 
 			// Se a proporção estiver ativa
 			if( strtolower($proporcao)=='p'  ){
@@ -217,13 +190,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Cria thumbnails de imagens
-		public function thumbImagem( $largura, $altura, $proporcao=null ){
+		public function thumbImagem( $largura, $altura, $proporcao=null )
+		{
 
 			// Se a proporção estiver ativa
 			if( strtolower($proporcao)=='p'  ){
@@ -264,13 +233,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Insere uma imagem no centro de outra criando uma moldura
-		public function emoldurarImagem( $largura, $altura, array $corfundo= array( 255,255,255 ) ){
+		public function emoldurarImagem( $largura, $altura, array $corfundo= array( 255,255,255 ) )
+		{
 			
 			// Comprimento original da imagem
 			$largura_or= imagesx($this->imagemcriada);
@@ -303,13 +268,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Converte base64 para imagem
-		public function b64toImage( $img ){
+		public function b64toImage( $img )
+		{
 
 			// Remove strings do hash
 			$img = str_replace( 'data:image/png;base64,', '', $img );
@@ -338,13 +299,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Converte um arquivo de imagem para base 64
-		public function imagemparab64( $imagem_nome ){
+		public function imagemparab64( $imagem_nome )
+		{
 
 			// Nome da imagem
 			$this->imagem= $imagem_nome;

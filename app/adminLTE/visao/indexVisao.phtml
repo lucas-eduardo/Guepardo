@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title> Guepardo </title>
+
+		<meta name="description" content="Framework para facilitar no desenvolvimento web." />
+
+		<meta name="keywords" content="guepardo">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+		<meta name="author" content="Lucas Eduardo">
+
+		<meta http-equiv="Content-Language" content="pt-br">
+
+		<meta property="og:locale" content="pt-br" >
+
+		<meta property="og:title" content="Template Admin LTE" >
+
+		<meta property="og:site_name" content="Guepardo" >
+
+		<meta property="og:description" content="Framework para facilitar no desenvolvimento web">
+
+		<meta property="og:url" content="<?php echo CAMINHO; ?>">
+
+		<meta property="og:image" content="<?php echo EXTERNOS; ?>">
+
+		<meta property="og:image:type" content="image/png">
+
+		<meta property="og:image:width" content="300">
+
+        <meta property="og:image:height" content="300">
+
+        <meta property="og:type" content="website">
+
+        <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+        <meta HTTP-EQUIV="Expires" CONTENT="-1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="shortcut icon" href="<?php echo EXTERNOS; ?>" type="image/x-icon">
+		
+		<link rel="icon" href="<?php echo EXTERNOS; ?>i" type="image/x-icon">
+
+		<link rel="stylesheet" href="<?php echo EXTERNOS; ?>frameworks/bootstrap/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="<?php echo EXTERNOS; ?>template/bower_components/font-awesome/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="<?php echo EXTERNOS; ?>template/dist/css/AdminLTE.min.css">
+
+		<link rel="stylesheet" href="<?php echo EXTERNOS; ?>template/dist/css/skins/_all-skins.min.css">
+
+	</head>
+
+	<body class="hold-transition skin-blue sidebar-mini">
+
+		<div class="wrapper">
+
+			<!-- Inclue o topo -->
+			<?php require_once('topo.phtml'); ?>
+			<!-- #Inclue o topo -->
+			
+			<!-- Inclue o menu -->
+			<?php require_once('menu.phtml'); ?>
+			<!-- #Inclue o menu -->
+
+			<div class="content-wrapper">
+
+				<section class="content-header">
+
+					<h1>
+
+						<?php echo $view_titulo; ?>
+						<small><?php echo $view_subtitulo; ?></small>
+
+					</h1>
+
+					<?php echo $view_brad; ?>
+
+				</section>
+
+				<section class="content">
+
+					<?php
+
+						// Carrega o conteudo central
+						require_once( APP_PATCH.'visao/'.$this->router->controlador.'/'.$this->router->acao.'.phtml' );
+
+					?>
+
+				</section>
+
+			</div>
+
+			<?php require_once('rodape.phtml'); ?>
+
+		</div>
+
+		<script src="<?php echo EXTERNOS; ?>frameworks/jquery/jquery.min.js"></script>
+		<script src="<?php echo EXTERNOS; ?>frameworks/angularjs/angular.min.js"></script>
+		<script src="<?php echo EXTERNOS; ?>frameworks/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo EXTERNOS; ?>template/dist/js/adminlte.min.js"></script>
+
+		<?php if( isset( $js ) ){ echo $js; }; ?>
+
+	</body>
+
+</html>

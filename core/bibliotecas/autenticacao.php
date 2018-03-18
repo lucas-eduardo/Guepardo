@@ -1,7 +1,8 @@
 <?php
 
 	// Realiza o controle de acesso dos usuários
-	class GU_autenticacao{
+	class GU_autenticacao
+	{
 
 		//PROPRIEDADES PROTEGIDAS
 		protected
@@ -19,21 +20,15 @@
 		$acaoLogin='index',
 		$controladorLogout='index',
 		$acaoLogout='index',
-		$nomeSessao='Usuarioautenticado'// Nome será atribuido a sessão de autenticação
-
-		;
-
-
-
-		//---------------------------------------------------------------------------------------
-
+		$nomeSessao='Usuarioautenticado';
 
 
 		/*
 		* Recupera instancia o objeto, se conecta ao banco de dados e 
 		* carrega ajudantes e blibliotecas necessárias
 		*/
-		public function __construct(){
+		public function __construct()
+		{
 
 			$this->GU =& obter_instancia();
 
@@ -48,13 +43,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define nome da tabela a ser usada
-		public function montaNometabela( $tabela ){
+		public function montaNometabela( $tabela )
+		{
 
 			$this->nomeTabela= $tabela;
 			return $this;
@@ -62,13 +53,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define coluna do usuario
-		public function montaColunausuario( $coluna ){
+		public function montaColunausuario( $coluna )
+		{
 
 			$this->colunaUsuario= $coluna;
 			return $this;
@@ -76,13 +63,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define coluna da senha
-		public function montaColunasenha( $coluna ){
+		public function montaColunasenha( $coluna )
+		{
 
 			$this->colunaSenha= $coluna;
 			return $this;
@@ -90,13 +73,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define regras adicionais
-		public function montaRegras( array $regras ){
+		public function montaRegras( array $regras )
+		{
 
 			$this->regrasAdicionais= $regras;
 			return $this;
@@ -104,13 +83,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define usuario
-		public function montaUsuario( $usuario ){
+		public function montaUsuario( $usuario )
+		{
 
 			$this->usuario= $usuario;
 			return $this;
@@ -118,13 +93,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define senha
-		public function montaSenha( $senha ){
+		public function montaSenha( $senha )
+		{
 
 			$this->senha= $senha;
 			return $this;
@@ -132,13 +103,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define parametros para url
-		public function montaparametrosUrl( $nome, $valor ){
+		public function montaparametrosUrl( $nome, $valor )
+		{
 
 			$this->GU->redirecionador->defineparametrosUrl($nome, $valor);
 			return $this;
@@ -146,13 +113,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define controlador e acao para redirecionamento apos o login
-		public function montaLogincontroladoracao( $controlador, $acao ){
+		public function montaLogincontroladoracao( $controlador, $acao )
+		{
 
 			$this->controladorLogin= $controlador;
 			$this->acaoLogin= $acao;
@@ -161,27 +124,19 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define controlador e acao para redirecionamento apos o login
-		public function montaUrlerrologin( $url ){
+		public function montaUrlerrologin( $url )
+		{
 
 			$this->url= $url;
 			return $this;
 
 		}
-
-
-
-		//---------------------------------------------------------------------------------------
-
 
 
 		// Define a url de redirecionamento em caso de logout
-		public function montaLogouturl( $url ){
+		public function montaLogouturl( $url )
+		{
 
 			$this->url= $url;
 			return $this;
@@ -189,13 +144,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define controlador e acao para redirecionamento em caso de logout
-		public function montaLogoutcontroladoracao( $controlador, $acao ){
+		public function montaLogoutcontroladoracao( $controlador, $acao )
+		{
 
 			$this->controladorLogout= $controlador;
 			$this->acaoLogout= $acao;
@@ -204,13 +155,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Define nome da sessao
-		public function montaNomesessao( $nome ){
+		public function montaNomesessao( $nome )
+		{
 
 			$this->nomeSessao= $nome;
 			return $this;
@@ -218,13 +165,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Realiza o login
-		public function login(){
+		public function login()
+		{
 
 			$this->GU->load->bancodedados();
 
@@ -267,13 +210,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Realiza o logout
-		public function logout(){
+		public function logout()
+		{
 
 			excluisessao( hash('sha512', $this->nomeSessao ) );
 			excluisessao( $this->nomeSessao."_Usuariodados" );
@@ -298,74 +237,19 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Checa se o usuario esta logado
-		public function checaLogin( $condicao ){
+		public function checaLogin()
+		{
 
-			switch($condicao){
+			if( !verificasessao( hash('sha512', $this->nomeSessao ) ) ){
 
-				case "boleano":
+				return false;
 
-					if( !verificasessao( hash('sha512', $this->nomeSessao ) ) ){
+			}else{
 
-						return false;
-
-					}else{
-
-						return true;
-
-					}
-
-				break;
-
-				case "redirecionar":
-
-					if( !verificasessao( hash('sha512', $this->nomeSessao ) ) ){
-
-						if( is_null( $this->url ) ){
-
-							$this->GU->redirecionador->irparacontroladorAcao( $this->controladorLogin,$this->acaoLogin );
-
-						}else{
-
-							$this->GU->redirecionador->irparaUrl( $this->url );
-
-						}
-
-					}
-
-				break;
-
-				case "parar":
-
-					if( !verificasessao( hash('sha512', $this->nomeSessao ) ) ){
-
-						exit;
-
-					}
-
-				break;
+				return true;
 
 			}
-
-		}
-
-
-
-		//---------------------------------------------------------------------------------------
-
-
-
-		// Retorna os dados do usuario
-		public function dadosUsuario( $coluna ){
-
-			$sessao= selecionasessao( $this->nomeSessao."_Usuariodados");
-			return $sessao[$coluna];
-
 		}
 
 	}

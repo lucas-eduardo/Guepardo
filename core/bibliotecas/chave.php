@@ -3,10 +3,12 @@
 	/*
 	* Esta classe permite a geração de chaves numericas e alfanumericas aleatorias
 	*/
-	class GU_Chave{
+	class GU_Chave
+	{
 
 		// Valida a existencia da chave na tabela e coluna definidas
-		private function validabd( $chave, $tabela, $coluna ){
+		private function validabd( $chave, $tabela, $coluna )
+		{
 
 			$GU =& obter_instancia();//Recupera a instancia do superobjeto
 
@@ -23,13 +25,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Gera a chave com base nos dados informados
-		public function geraChave( $tamanho, $tipo='', $bd='' ){
+		public function geraChave( $tamanho, $tipo='', $bd='' )
+		{
 
 			switch($tipo){
 

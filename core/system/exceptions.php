@@ -3,12 +3,14 @@
 	/*
 	* Classe de manipulação de excessoes
 	*/
-	class GU_Exceptions{
+	class GU_Exceptions
+	{
 
 		/*
 		* Grava os logs de erros
 		*/
-		public function gravalogErro( $errno, $errstr, $errfile, $errline ){
+		public function gravalogErro( $errno, $errstr, $errfile, $errline )
+		{
 
 			$stringerro= "Nivel do erro ( $errno ) - $errstr em $errfile na linha $errline\n";
 			

@@ -4,7 +4,8 @@
 	* Classe de URLs
 	*/
 
-	class GU_URL{
+	class GU_URL
+	{
 
 		private $requisicao;
 		private $separador;
@@ -20,7 +21,8 @@
 		/*
 		* Recupera e configura os parametros da url
 		*/
-		public function __construct(){
+		public function __construct()
+		{
 
 			//CASO NÃO EXISTA UMA REQUISICAO DEFINIMOS O PADRAO 'index/index'
 			$this->requisicao= (isset($_GET['requisicao'])) ? $_GET['requisicao'] : 'index/index' ;
@@ -67,7 +69,8 @@
 		/*
 		* Retorna o valor do parametro requisitado
 		*/
-		public function getParametro( $parametro=null ){
+		public function getParametro( $parametro=null )
+		{
 
 			return ( !is_null($parametro) && !empty($parametro) )? $this->parametros[$parametro] : false ;
 
@@ -82,7 +85,8 @@
 		/*
 		* Retorna um array com os parametros
 		*/
-		public function getParametros(){
+		public function getParametros()
+		{
 
 			return $this->parametros;
 
@@ -97,7 +101,8 @@
 		/*
 		* Retorna string completa dos parametros
 		*/
-		public function getstringParametros( $parametros=null ){
+		public function getstringParametros( $parametros=null )
+		{
 
 			$stringparametros= '' ;//STRING LIMITE INICIA VAZIA
 
@@ -128,7 +133,8 @@
 		/*
 		* Inclui um parametro na matriz
 		*/
-		public function addParametro( $parametro, $valor ){
+		public function addParametro( $parametro, $valor )
+		{
 
 			$this->parametros[$parametro]=$valor;
 
@@ -145,7 +151,8 @@
 		/*
 		* Remove um parametro da matriz
 		*/
-		public function delParametro($parametro){
+		public function delParametro($parametro)
+		{
 
 			unset($this->parametros[$parametro]);
 

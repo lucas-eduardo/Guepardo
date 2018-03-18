@@ -3,9 +3,11 @@
 	/*
 	* Carrega classe informada
 	*/
-	if ( ! function_exists( 'carrega_classe' ) ) {
+	if( ! function_exists( 'carrega_classe' ) )
+	{
 
-		function &carrega_classe( $classe, $dir='system', $prefixo= 'GU_' ){
+		function &carrega_classe( $classe, $dir='system', $prefixo= 'GU_' )
+		{
 
 			static $classes= array();
 
@@ -57,7 +59,8 @@
 	/*
 	* Registra as classes carregadas para controle
 	*/
-	if ( ! function_exists('classes_carregadas')){
+	if ( ! function_exists('classes_carregadas'))
+	{
 
 		function &classes_carregadas( $classe = '' ){
 
@@ -84,7 +87,8 @@
 	/*
 	* Invoca a classe de Excessoes e grava log de erro
 	*/
-	function manipulador_excessoes( $errno, $errstr, $errfile, $errline ){
+	function manipulador_excessoes( $errno, $errstr, $errfile, $errline )
+	{
 
 		$erro =& carrega_classe( 'exceptions', 'system' );
 

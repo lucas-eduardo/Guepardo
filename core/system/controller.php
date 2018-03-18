@@ -4,7 +4,8 @@
 	/*
 	* Classe de Controle da Aplicação
 	*/
-	class Controller{
+	class Controller
+	{
 
 		/*
 		* Armazena a instancia das classes carregadas
@@ -20,7 +21,8 @@
 		/*
 		* Cria a instancia do objeto e inicializa o auto-carregamento
 		*/
-		public function __construct(){
+		public function __construct()
+		{
 			
 			self::$instancia =& $this;
 
@@ -47,7 +49,8 @@
 		/*
 		* Recupera a instancia do objeto
 		*/
-		public static function &obter_instancia(){
+		public static function &obter_instancia()
+		{
 
 			return self::$instancia;
 			

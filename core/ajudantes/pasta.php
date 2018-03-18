@@ -1,7 +1,8 @@
 <?php 
 
     // Função que dá permissão recursiva em diretorio
-    function chmoddir($caminho, $permicao = 0777) {
+    function chmoddir($caminho, $permicao = 0777)
+    {
         
         // Verifica se o caminho é um diretorio
         if (is_dir($caminho)) {
@@ -41,13 +42,9 @@
     };
 
 
-
-    //-----------------------------------------------------------------------------------------------------
-
-
-
     // Função que apaga apaga diretorio.
-    function removedir($diretorio) {
+    function removedir($diretorio)
+    {
 
         if (is_dir($diretorio)) {
 

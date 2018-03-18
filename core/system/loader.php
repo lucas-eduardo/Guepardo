@@ -4,7 +4,8 @@
 	* Carrega ajudantes, bibliotecas, visoes
 	*/
 
-	class GU_Loader{
+	class GU_Loader
+	{
 
 
 		/*
@@ -31,7 +32,8 @@
 		/*
 		* Define o caminho das bibliotecas e ajudantes
 		*/
-		public function __construct(){
+		public function __construct()
+		{
 
 			$this->caminhos_ajudantes= array( APP_PATCH,PATCH_SYSTEM );
 
@@ -48,7 +50,8 @@
 		/*
 		* Chama o metodo para carregamento automatico os ajuantes e bibliotecas
 		*/
-		public function inicializar(){
+		public function inicializar()
+		{
 
 			$this->autocarregar();
 
@@ -65,7 +68,8 @@
 		/*
 		* Carrega o arquivo view especificado
 		*/
-		public function view( $nome_arquivo, $parametros=null, $caminho=null  ){
+		public function view( $nome_arquivo, $parametros=null, $caminho=null  )
+		{
 
 			$GU =& obter_instancia();
 
@@ -133,7 +137,8 @@
 		/*
 		* Carrega o ajudante especificado
 		*/
-		public function ajudante( array $ajudantes ){
+		public function ajudante( array $ajudantes )
+		{
 
 
 			foreach ( $ajudantes as $ajudante) {
@@ -164,7 +169,8 @@
 		/*
 		* Metodo que permite carregar e instanciar classes de bibliotecas
 		*/
-		public function biblioteca( $biblioteca, $prefix=null, $caminho=null ){
+		public function biblioteca( $biblioteca, $prefix=null, $caminho=null )
+		{
 
 			$biblioteca = strtolower( $biblioteca );
 
@@ -218,7 +224,8 @@
 		/*
 		* Permita carregar e instanciar modelos
 		*/
-		public function modelo( $modelo, $condb=FALSE, $caminho=null ){
+		public function modelo( $modelo, $condb=FALSE, $caminho=null )
+		{
 
 			$modelo = strtolower( $modelo );
 
@@ -272,7 +279,8 @@
 		/*
 		* Carrega o gerenciador de banco de dados
 		*/
-		public function bancodedados(){
+		public function bancodedados()
+		{
 
 			// Se ja existir uma conexao com o banco ignora
 			if ( in_array( $bd['banco'], $this->conexoes ) ) {
@@ -302,7 +310,8 @@
 		/*
 		* Carrega automaticamente os ajudantes configurados no config/autocarregamento.php
 		*/
-		private function autocarregar(){
+		private function autocarregar()
+		{
 
 			if( APP_PATCH.'config/autocarregamento.php'  ){
 

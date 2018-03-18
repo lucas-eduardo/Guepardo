@@ -50,7 +50,10 @@ guepardo.controller('Guepardo', function($scope, $timeout){
 	$scope.bli = {
 
 		"carregando": true,
-		"automatico": false
+		"automatico": false,
+		"chave": false,
+		"redirecionador": false,
+		"autenticacao": false
 
 	};
 

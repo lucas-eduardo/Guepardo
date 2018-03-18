@@ -3,8 +3,8 @@
 	/*
 	* Cria um link de navegação bradcrumbs ( links migalhas de pão )
 	*/
-
-	class GU_migalhas{
+	class GU_migalhas
+	{
 		
 		//Propriedades públicas
 		public $sessao= array( array( "Home","index","" ) );
@@ -17,13 +17,9 @@
 		private $classeelementoatual= 'atual';
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Método que define o tipo de elemento pai da estrutura do bradcrumbs
-		public function definetipoelemento( $tipo ){
+		public function definetipoelemento( $tipo )
+		{
 
 			switch ($tipo) {
 
@@ -41,13 +37,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Método que a classe do ultimo elemento do bradcrumbs ( elemento atual )
-		public function defineclasselementoatual( $classe ){
+		public function defineclasselementoatual( $classe )
+		{
 
 			$this->classeelementoatual= $classe;
 
@@ -56,13 +48,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Método que define uma sessão
-		public function defineSessao( $sessao, $inicio=false ){
+		public function defineSessao( $sessao, $inicio=false )
+		{
 
 			if( is_array( $sessao ) ){
 
@@ -76,13 +64,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Metodo que cria e retorna o html do bradcrumbs
-		public function menu( $class=null, $idelementopai=null ){
+		public function menu( $class=null, $idelementopai=null )
+		{
 
 			$class=( is_null( $class ) )? 'breadcrumb' : $class ;
 			$idelementopai=( is_null( $idelementopai ) )? '' : 'id="'.$idelementopai.'"' ;

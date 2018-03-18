@@ -157,7 +157,8 @@
 	/*
 	* Retorna a instancia do controlador
 	*/
-	function &obter_instancia(){
+	function &obter_instancia()
+	{
 
 		return Controller::obter_instancia();
 

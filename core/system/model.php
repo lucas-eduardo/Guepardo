@@ -4,7 +4,8 @@
 	* Modelo da aplicação
 	*/
 
-	class GU_Model{
+	class GU_Model
+	{
 
 		/*
 		* __get
@@ -13,7 +14,8 @@
 		* com a mesma sintaxe que os controladores
 		*
 		*/
-		function __get( $chave ){
+		function __get( $chave )
+		{
 
 			$GU =& obter_instancia();
 			return $GU->$chave;

@@ -1,68 +1,49 @@
 <?php
 
-	class GU_redirecionador{
+	class GU_redirecionador
+	{
 
 		protected $parametrosurl= array();
 
 		protected $GU;
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
-		public function __construct(){
+		public function __construct()
+		{
 
 			$this->GU =& obter_instancia();
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Redireciona para página
-		protected function ir( $url ){
+		protected function ir( $url )
+		{
 
 			header("Location:".rtrim(CAMINHO, "/").'/'.$url);
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
-		public function obtercontroladorAtual(){
+		public function obtercontroladorAtual()
+		{
 
 			return $this->GU->router->controlador;
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
-		public function obteracaoAtual(){
+		public function obteracaoAtual()
+		{
 
 			return $this->GU->router->acao;
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Recupera e monta os parametros da url
-		protected function obterparametrosUrl(){
+		protected function obterparametrosUrl()
+		{
 
 			$parametrosurl= "";		
 
@@ -84,13 +65,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Remove parametro
-		public function delParametro($parametro){
+		public function delParametro($parametro)
+		{
 
 			unset( $this->GU->url->parametros[$parametro] );
 
@@ -101,13 +78,9 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Recebe os parametros da url
-		public function defineparametrosUrl( $nome, $valor ){
+		public function defineparametrosUrl( $nome, $valor )
+		{
 
 			$this->GU->url->parametros[$nome]= $valor;
 
@@ -116,39 +89,27 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Envia pedido para redirecionar para um controlador
-		public function irparaControlador( $controlador ){
+		public function irparaControlador( $controlador )
+		{
 
 			$this->ir( $controlador.'/index/'.$this->obterparametrosUrl() );
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Envia pedido para redirecionar para uma ação
-		public function irparaAcao( $acao ){
+		public function irparaAcao( $acao )
+		{
 
 			$this->ir( $this->obtercontroladorAtual().'/'.$acao.'/'.$this->obterparametrosUrl() );
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Envia pedido para redirecionar para um controlador e uma ação
-		public function irparacontroladorAcao( $controlador, $acao , $parametros=null ){
+		public function irparacontroladorAcao( $controlador, $acao , $parametros=null )
+		{
 
 			$parametrosurl= $this->obterparametrosUrl();
 			
@@ -161,26 +122,18 @@
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Envia pedido para redirecionar para o inicio
-		public function irparaInicio(){
+		public function irparaInicio()
+		{
 
 			$this->ir( 'index' );
 
 		}
 
 
-
-		//---------------------------------------------------------------------------------------
-
-
-
 		// Redireciona para uma url
-		public function irparaUrl( $url ){
+		public function irparaUrl( $url )
+		{
 
 			header("Location: ".$url);
 

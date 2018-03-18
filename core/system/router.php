@@ -5,7 +5,8 @@
 	* Define o roteamento das requisicoes
 	*/
 
-	class GU_Router{
+	class GU_Router
+	{
 
 		private $requisicao;
 		private $separador;
@@ -21,7 +22,8 @@
 		/*
 		* Configura o controlador e acao
 		*/
-		public function __construct(){
+		public function __construct()
+		{
 
 			// Caso não exista, define 'index/index' como padrão.
 			$this->requisicao= (isset($_GET['requisicao'])) ? $_GET['requisicao'] : 'index/index' ;
