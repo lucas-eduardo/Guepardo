@@ -17,7 +17,7 @@
 	/*
 	* Define a versão do framework
 	*/
-	define( "VersaoGuepardo", "1.5" );
+	define( "VersaoGuepardo", "1.8" );
 
 
 

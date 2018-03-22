@@ -34,6 +34,9 @@
 	// Define o nome da sessão
 	define('SESSAOAPP', '' );
 
+	// Define se esta na produção
+	define('PRODUCAO', true);
+
 
 
 	//---------------------------------------------------------------------------------------
@@ -43,15 +46,15 @@
 	/*
 	* Diretivas da aplicação
 	*/
-	if( $_SERVER['HTTP_HOST'] == 'localhost' ){
+	if( !PRODUCAO ){ // Se for false...
 
-		define('CAMINHO','http://localhost/particular/guepardo');
-		define('EXTERNOS','http://localhost/particular/guepardo/app/framework/externos/');
+		define('CAMINHO','http://localhost/Guepardo');
+		define('EXTERNOS','http://localhost/Guepardo/app/framework/externos/');
 
-	}else{
+	}else{ // Se não...
 
-		define('CAMINHO','http://localhost/particular/guepardo');
-		define('EXTERNOS','http://localhost/particular/guepardo/app/framework/externos/');
+		define('CAMINHO','http://localhost/Guepardo');
+		define('EXTERNOS','http://localhost/Guepardo/app/framework/externos/');
 
 	}
 

@@ -1,0 +1,267 @@
+<section id="bdcrud"><div class="container wow fadeInUp"><div class="row"><div class="col-md-12"><h3 class="section-title">CRUD entre Outros</h3><div class="section-title-divider"></div></div></div></div><div class="container wow fadeInUp"><div class="row"><div class="col-md-3"><div class="menu-lateral"><button type="button" class="btn btn-gu" ng-class="{'active': bd.insert}" ng-click="altera( 'insert', 'bd' )">INSERT</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.insertgroup}" ng-click="altera( 'insertgroup', 'bd' )">INSERT GROUP</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.read}" ng-click="altera( 'read', 'bd' )">READ</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.consult}" ng-click="altera( 'consult', 'bd' )">CONSULT</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.update}" ng-click="altera( 'update', 'bd' )">UPDATE</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.updategroup}" ng-click="altera( 'updategroup', 'bd' )">UPDATE GROUP</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.delete}" ng-click="altera( 'delete', 'bd' )">DELETE</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.iniciatransacao}" ng-click="altera( 'iniciatransacao', 'bd' )">INICIA TRANSAÇÃO</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.enviatransacao}" ng-click="altera( 'enviatransacao', 'bd' )">ENVIA TRANSAÇÃO</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.desfaztransacao}" ng-click="altera( 'desfaztransacao', 'bd' )">DESFAZ TRANSAÇÃO</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.setjoin}" ng-click="altera( 'setjoin', 'bd' )">SET JOIN</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.setfetchall}" ng-click="altera( 'setfetchall', 'bd' )">SET FETCH ALL</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.setfetch}" ng-click="altera( 'setfetch', 'bd' )">SET FETCH</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.setselect}" ng-click="altera( 'setselect', 'bd' )">SET SELECT</button> <button type="button" class="btn btn-gu mar-top10" ng-class="{'active': bd.outros}" ng-click="altera( 'outros', 'bd' )">OUTROS</button></div></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.insert"><h2 class="bdcrud-title">INSERT</h2><p class="primeirospassos-text">Quando é necessário fazer uma inserção ao banco de dados é muito importante que seja de forma segura, o framework já faz todo esse tratamento através do <code>PDO</code>.<br>Para chamar o método que insere um registro no banco, basta chamar: <code>$this->bd->insert()</code>, esse método espera um único parametro, um array com a informação do campo da tabela e o seu respectivo valor, veja o exemplo abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela="desenvolvedores";
+
+    // Dados a serem adicionados
+    $inserir[ "strDevNome" ] = "Rasmus Lerdorf";
+    $inserir[ "strDevDescricao" ] = "Desenvolveu o PHP";
+
+    // Chama o método que faz a inserção do dado
+    $this->bd->insert( $inserir );
+
+?>') ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.insertgroup"><h2 class="bdcrud-title">INSERT GROUP</h2><p class="primeirospassos-text">Imaginando o cenário que você terá que adicionar varios dados de uma só vez no banco de dados, esse método ajudará muito para que não faz diversas requisições ao <code>BD</code>, para fazer a inserção de dados em modo de grupo.<br>Para chamar o método, basta chamar: <code>$this->bd->insert_group()</code>, esse método espera um array de informações, veja o exemplo abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Array de nomes
+    $nomes = array("Rasmus", "Bill Gates", "Jobs", "Mark");
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela="desenvolvedores";
+
+    // Roda um loop para criar um grupo de dados para adicionar no BD
+    $aux = 0;
+    foreach ($nomes as $nome){
+
+        $inserir[$aux] = array(
+
+            "strDevNome" => $nome
+
+        );
+
+        $aux++;
+
+    }
+
+    // Chama o método que faz a inserção em grupo dos dados
+    $this->bd->insert_group( $inserir );
+
+?>') ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.read"><h2 class="bdcrud-title">READ</h2><p class="primeirospassos-text">É possível realizar a leitura de dados do banco de dados, para isso basta chamar o método: <code>$this->bd->read()</code>, ele possue 4 parametros, ambos não são obrigatórios!<br><br>- <code>Where</code>: É passado um array de condições para a consulta<br><br>- <code>Limit</code>: É passado um número para limitar o resultado<br><br>- <code>Offset</code>: É passado um número para limitar o resultado, precisa do limit<br><br>- <code>Order By</code> Faz toda parte de ordenação da consulta, basta adionar <code>ASC</code> ou <code>DESC</code><br><br>Para realizar o <code>WHERE</code>, ele espera 4 parametros: <code>campo da tabela</code>, <code>condição</code>, <code>valor</code> e caso possua mais condição coloca <code>AND</code> se não deixa vazio.<br><br>Veja o exemplo abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela = "desenvolvedores";
+
+    // Cria meu where
+    $where[] = array( "strDevNome", "=", "Rasmus", "" );
+
+    // Realiza a consulta
+    $this->bd
+    ->setfetch()
+    ->read( $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.consult"><h2 class="bdcrud-title">CONSULT</h2><p class="primeirospassos-text">A consulta dá mais liberdade para realizar alguma leitura, ele permite adicionar o código sql dentro do método.<br>Para chamar esse método basta colocar: <code>$this->bd->consult_bd()</code>, ele espera 2 parametros, o primeiro é a consulta em sql e o segundo que não é obrigatório são os parametros de consulta, para aumentar a segurança!<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela="desenvolvedores";
+
+    // Condição da consulta
+    $condicao[] = "10";
+
+    // Realização da consulta
+    $this->bd
+    ->setfetchAll()
+    ->consulta("
+
+        SELECT * FROM desenvolvedores
+
+        WHERE
+
+        strDevNome = ?
+
+    ", $condicao);
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.update"><h2 class="bdcrud-title">UPDATE</h2><p class="primeirospassos-text">Para realizar o update de um dado, é preciso chamar o método <code>$this->bd->update()</code>, este método espero 2 parametros, o primeiro é os dados e o segundo que não é obrigatório, é a condição.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela="desenvolvedores";
+
+    $where[] = array( "strDevNome", "=", "Rasmus Lerdorf", "" );
+
+    // Dados a serem adicionados
+    $atualizar[ "strDevNome" ] = "Mark";
+    $atualizar[ "strDevDescricao" ] = "Desenvolveu o Facebook";
+
+    // Chama o método que faz a atualização do dado
+    $this->bd->update( $atualizar, $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.updategroup"><h2 class="bdcrud-title">UPDATE GROUP</h2><p class="primeirospassos-text">Para realizar um atualização em grupo, é utilizado o método <code>$this->bd->update_group()</code>, este método espero 2 parametros, o primeiro é os dados e o segundo que não é obrigatório, é a condição.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Array de nomes
+    $nomes = array("Jeff Bezos", "Romero Rodrigues");
+
+    // Nomes para a condição
+    $condicao = arra("Jobs", "Mark");
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela="desenvolvedores";
+
+    // Roda um loop para criar um grupo de dados para adicionar no BD
+    $aux = 0;
+    foreach ($nomes as $nome){
+
+        // Destroi o where
+        unset($where);
+
+        $where[] = array( "strDevNome", "=", $condicao[$aux], "" );
+
+        $atualizar[$aux] = array(
+
+            "strDevNome" => $nome
+
+        );
+
+        $aux++;
+
+    }
+
+    // Chama o método que faz a inserção em grupo dos dados
+    $this->bd->insert_group( $atualizar, $where );
+
+?>') ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.delete"><h2 class="bdcrud-title">DELETE</h2><p class="primeirospassos-text">Para excluir um dado do banco de dados, é necessário utilizar o método <code>$this->bd->delete()</code>, ele espera um parametro que é a condição, caso não seja passado nada, ele apagará tudo.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela = "desenvolvedores";
+
+    // Cria a condição
+    $where[] = array( "strDevNome", "=", "Jeff Bezos", "" );
+
+    // Realiza a exclusão
+    $this->bd->delete( $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.iniciatransacao"><h2 class="bdcrud-title">INICIA TRANSAÇÃO</h2><p class="primeirospassos-text">O inicia transação é utilizado no controlador, ele server para dar um "start" dizendo onde uma conexão com o bando de dados inicia, para chama-lo basta colocar: <code>$this->nomemodelo->iniciaTransacao()</code>.<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Carrega o modelo
+    $this->load->modelo("primeiromodelo");
+
+    // Inicia a transação
+    $this->primeiromodelo->iniciaTransacao();
+
+    // Chama o método do modelo
+    $this->primeiromodelo->cadastranome();
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em uma ação do controlador!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.enviatransacao"><h2 class="bdcrud-title">ENVIA TRANSAÇÃO</h2><p class="primeirospassos-text">O envia transação é utilizado no controlador, ele server para concluir a requisição feita no banco de dados, para chama-lo basta colocar: <code>$this->nomemodelo->enviaTransacao()</code>.<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Carrega o modelo
+    $this->load->modelo("primeiromodelo");
+
+    // Inicia a transação
+    $this->primeiromodelo->iniciaTransacao();
+
+    // Chama o método do modelo
+    $statuscadastro = $this->primeiromodelo->cadastranome();
+
+    if( $statuscadastro ){
+
+        // Envia a transação caso for com sucesso
+        $this->primeiromodelo->enviaTransacao();
+
+    }
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em uma ação do controlador!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.desfaztransacao"><h2 class="bdcrud-title">DESFAZ TRANSAÇÃO</h2><p class="primeirospassos-text">O desfaz transação é utilizado no controlador, ele server para desfazer a requisição feita no banco de dados, para chama-lo basta colocar: <code>$this->nomemodelo->desfazTransacao()</code>.<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Carrega o modelo
+    $this->load->modelo("primeiromodelo");
+
+    // Inicia a transação
+    $this->primeiromodelo->iniciaTransacao();
+
+    // Chama o método do modelo
+    $statuscadastro = $this->primeiromodelo->cadastranome();
+
+    if( $statuscadastro ){
+
+        // Envia a transação caso for com sucesso
+        $this->primeiromodelo->enviaTransacao();
+
+    }else{
+        
+        // Desfaz a transação caso ter qualquer falha
+        $this->primeiromodelo->desfazTransacao();
+
+    }
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em uma ação do controlador!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.setjoin"><h2 class="bdcrud-title">SET JOIN</h2><p class="primeirospassos-text">O set join é o famoso <code>INNER JOIN</code> do sql, ele é utilizado nas consulta.<br>Ele espera 3 parametros, no primeiro é o nome da tabela, o segundo é a condição e o terceiro que não é obrigatório e o tipo, por exemplo: <code>left</code>, <code>left outer</code>, <code>right outer</code> e caso não for nenhum desses ele passa somente o <code>join</code>.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela = "desenvolvedores";
+
+    // Cria meu where
+    $where[] = array( "strDevNome", "=", "Rasmus", "" );
+
+    // Realiza a consulta
+    $this->bd
+    ->setjoin("telefones", "telefones.intTelChaveDev = desenvolvedores.intDevChave", "")
+    ->setfetch()
+    ->read( $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.setfetchall"><h2 class="bdcrud-title">SET FETCH ALL</h2><p class="primeirospassos-text">O set fetch all retorna um array com todos os registros encontrados no banco de dados, conforme foi passo a consulta.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela = "desenvolvedores";
+
+    // Cria meu where
+    $where[] = array( "strDevNome", "=", "Rasmus", "" );
+
+    // Realiza a consulta
+    $this->bd
+    ->setjoin("telefones", "telefones.intTelChaveDev = desenvolvedores.intDevChave", "")
+    ->setfetchAll()
+    ->read( $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.setfetch"><h2 class="bdcrud-title">SET FETCH</h2><p class="primeirospassos-text">O set fetch retorna uma linha o registro encontrado no banco de dados, conforme foi passo a consulta.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela = "desenvolvedores";
+
+    // Cria meu where
+    $where[] = array( "strDevNome", "=", "Rasmus", "" );
+
+    // Realiza a consulta
+    $this->bd
+    ->setjoin("telefones", "telefones.intTelChaveDev = desenvolvedores.intDevChave", "")
+    ->setfetch()
+    ->read( $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.setselect"><h2 class="bdcrud-title">SET SELECT</h2><p class="primeirospassos-text">O set select é como um filtro que traz somente os dados que irá utilizar.<br><br>Veja o código abaixo:<br><br> <?php
+
+                        highlight_string('<?php
+
+    // Define a tabela a ser utilizada
+    $this->bd->tabela = "desenvolvedores";
+
+    // Cria meu where
+    $where[] = array( "strDevNome", "=", "Rasmus", "" );
+
+    // Realiza a consulta
+    $this->bd
+    ->setselect("desenvolvedores.strDevNome, telefones.strTelTelefone")
+    ->setjoin("telefones", "telefones.intTelChaveDev = desenvolvedores.intDevChave", "")
+    ->setfetch()
+    ->read( $where );
+
+?>'); ?><br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div><div class="col-md-9 bdcrud-content conteudo-lateral" ng-if="bd.outros"><h2 class="bdcrud-title">OUTROS</h2><p class="primeirospassos-text">Existe alguns parametros do banco de dados que ajuda o desenvolvedor no dia a dia, são esses:<br><br>- <code>$this->bd->linhas</code>: Retorna o total de linhas afetadas pela consulta<br><br>- <code>$this->bd->consulta_status</code>: Retorna o status da consulta realizada<br><br>- <code>$this->bd->conexao_status</code>: Retorna o status da conexao<br><br>- <code>$this->bd->consultas</code>: Retorna a quantidade de requisições ao CRUD<br><br><strong class="font12">Lembrando que esse exemplo foi aplicado em um método do modelo!</strong></p></div></div></div></section>

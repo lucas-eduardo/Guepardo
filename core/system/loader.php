@@ -100,10 +100,18 @@
 			}
 
 			// Define o caminho a ser usado para a view
-			$caminhoview= ( !is_null( $caminho ) && !empty( $caminho ) )? $caminho : APP_PATCH ;
+			$caminhoview = ( !is_null( $caminho ) && !empty( $caminho ) )? $caminho : APP_PATCH;
 
 			// Define o arquivo
-			$arquivo_view= $caminhoview.VISAO.$nome_arquivo;
+			if( PRODUCAO ){ // Se já estiver em produção...
+				
+				$arquivo_view = $caminhoview.'view-compress/index.phtml';
+
+			}else{ // Se não...
+
+				$arquivo_view = $caminhoview.VISAO.$nome_arquivo;
+
+			}			
 
 			// Insere o arquivo
 			try{

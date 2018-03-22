@@ -1,0 +1,29 @@
+{
+  "name": "guepardo",
+  "version": "1.0.0",
+  "description": "![CSCore Logo](https://thumbs.dreamstime.com/b/luipaard-tatoegering-19051931.jpg)",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-uglify": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ManualDeveloper/guepardo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ManualDeveloper/guepardo/issues"
+  },
+  "homepage": "https://gitlab.com/ManualDeveloper/guepardo#README"
+}
