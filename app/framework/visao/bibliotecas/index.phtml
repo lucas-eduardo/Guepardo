@@ -76,6 +76,33 @@
 
                     >Biblioteca Autenticação</button>
 
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.migalhas}"
+                        ng-click="altera( 'migalhas', 'bli' )"
+
+                    >Biblioteca Migalhas</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.phpmailer}"
+                        ng-click="altera( 'phpmailer', 'bli' )"
+
+                    >Biblioteca PHP Mailer</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.imagem}"
+                        ng-click="altera( 'imagem', 'bli' )"
+
+                    >Biblioteca Imagem</button>
+
                 </div>
 
             </div>
@@ -91,6 +118,12 @@
                 require_once('redirecionadorBiblioteca.php');
 
                 require_once('autenticacaoBiblioteca.php');
+
+                require_once('migalhasBiblioteca.php');
+
+                require_once('phpmailerBiblioteca.php');
+
+                require_once('imagemBiblioteca.php');
 
             ?>
 

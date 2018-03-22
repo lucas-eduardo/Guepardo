@@ -1,8 +1,10 @@
 <?php
 
-    class bdcrudControlador extends Controller{
+    class bdcrudControlador extends Controller
+    {
 
-        public function indexAcao(){
+        public function indexAcao()
+        {
 
             $parametros['url']= $this->url;
 

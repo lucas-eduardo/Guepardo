@@ -5,7 +5,7 @@
 	{
 		
 		// Define o tempo de vida
-		$inatividade= ( !is_null($tempo) )? $tempo*60 : 180*60 ;
+		$inatividade= ( !is_null($tempo) )? $tempo *60 : 180*60 ;
 		
 		if( !isset($_SESSION) ){// Se a sessão não existe, cria a mesma
 

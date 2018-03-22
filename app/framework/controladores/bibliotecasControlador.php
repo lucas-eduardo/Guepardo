@@ -1,8 +1,10 @@
 <?php
 
-    class bibliotecasControlador extends Controller{
+    class bibliotecasControlador extends Controller
+    {
 
-        public function indexAcao(){
+        public function indexAcao()
+        {
 
             $parametros['url']= $this->url;
 

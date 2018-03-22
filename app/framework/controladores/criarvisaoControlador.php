@@ -1,8 +1,10 @@
 <?php
 
-    class criarvisaoControlador extends Controller{
+    class criarvisaoControlador extends Controller
+    {
 
-        public function indexAcao(){
+        public function indexAcao()
+        {
 
             $parametros['url']= $this->url;
 

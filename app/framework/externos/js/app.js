@@ -53,14 +53,23 @@ guepardo.controller('Guepardo', function($scope, $timeout){
 		"automatico": false,
 		"chave": false,
 		"redirecionador": false,
-		"autenticacao": false
+		"autenticacao": false,
+		"migalhas": false,
+		"phpmailer": false,
+		"imagem": false
 
 	};
 
 	$scope.aju = {
 
 		"carregando": true,
-		"automatico": false
+		"automatico": false,
+		"checasessao": false,
+		"cookies": false,
+		"data": false,
+		"pasta": false,
+		"sessao": false,
+		"texto": false
 
 	};
 

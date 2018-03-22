@@ -1,8 +1,10 @@
 <?php
 
-    class criarmodeloControlador extends Controller{
+    class criarmodeloControlador extends Controller
+    {
 
-        public function indexAcao(){
+        public function indexAcao()
+        {
 
             $parametros['url']= $this->url;
 

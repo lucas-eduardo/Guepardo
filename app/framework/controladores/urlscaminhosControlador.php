@@ -1,8 +1,10 @@
 <?php
 
-    class urlscaminhosControlador extends Controller{
+    class urlscaminhosControlador extends Controller
+    {
 
-        public function indexAcao(){
+        public function indexAcao()
+        {
 
             $parametros['url']= $this->url;
 

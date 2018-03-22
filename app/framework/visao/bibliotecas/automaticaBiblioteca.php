@@ -10,7 +10,8 @@
 
             highlight_string('<?php
 
-    class GU_obter_users{
+    class GU_obter_users
+    {
 
         // Cria uma propriedade protegida chamada GU de Guepardo.
         protected $GU;
@@ -19,7 +20,8 @@
         * Método construtor, que recupera do o objeto,
         * sendo possível trabalhar com banco de dados, carregar ajudantes e bibliotecas
         */
-        public function __construct(){
+        public function __construct()
+        {
 
             $this->GU =& obter_instancia();
             return $this;
@@ -40,7 +42,8 @@
 
             highlight_string('<?php
 
-    class GU_obter_users{
+    class GU_obter_users
+    {
 
         // Cria uma propriedade protegida chamada GU de Guepardo.
         protected $GU;
@@ -49,7 +52,8 @@
         * Método construtor, que recupera do o objeto,
         * sendo possível trabalhar com banco de dados e carregar ajudantes.
         */
-        public function __construct(){
+        public function __construct()
+        {
 
             $this->GU =& obter_instancia();
             return $this;
@@ -61,7 +65,8 @@
 
 
         // Recupera usuarios
-        public function getUsers(){
+        public function getUsers()
+        {
 
             // Carrega toda a instancia do banco de dados
             $this->GU->load->bancodedados();

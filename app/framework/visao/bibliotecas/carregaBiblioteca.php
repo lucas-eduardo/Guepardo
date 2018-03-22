@@ -13,7 +13,8 @@
 
             highlight_string('<?php
 
-    class GU_obter_users extends GU_Model{
+    class GU_obter_users extends GU_Model
+    {
 
         // Seus métodos
 

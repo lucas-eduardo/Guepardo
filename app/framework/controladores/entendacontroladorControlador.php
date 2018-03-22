@@ -1,8 +1,10 @@
 <?php
 
-    class entendacontroladorControlador extends Controller{
+    class entendacontroladorControlador extends Controller
+    {
 
-        public function indexAcao(){
+        public function indexAcao()
+        {
 
             $parametros['url']= $this->url;
 

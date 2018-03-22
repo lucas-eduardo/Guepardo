@@ -20,11 +20,13 @@
 
             highlight_string('<?php
 
-    class chaveModelo extends GU_Model{
+    class chaveModelo extends GU_Model
+    {
 
 
         // Método que gera a chave
-        public function obterChave(){
+        public function obterChave()
+        {
 
             // Instancia a biblioteca chave
             $this->load->biblioteca("chave");

@@ -20,11 +20,13 @@
 
             highlight_string('<?php
 
-    class indexControlador extends Controller{
+    class indexControlador extends Controller
+    {
 
 
         // Método que gera a chave
-        public function obterChave(){
+        public function obterChave()
+        {
 
             // Instancia a biblioteca chave
             $this->load->biblioteca("redirecionador");

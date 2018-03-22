@@ -129,7 +129,7 @@ module.exports = function( grunt ){
 					'footer.phtml',
 					'cabecalho.phtml',
 					'index.php',
-					'*/*.phtml'
+					'*/*.{phtml,php}'
 
 				],
 				dest: 'app/framework/view-compress/'
@@ -147,7 +147,7 @@ module.exports = function( grunt ){
 					'rodape.phtml',
 					'topo.phtml',
 					'index.php',
-					'*/*.phtml'
+					'*/*.{phtml,php}'
 
 				],
 				dest: 'app/adminLTE/view-compress/'

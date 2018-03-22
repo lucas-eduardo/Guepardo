@@ -48,52 +48,83 @@
 
                     >Carregamento automático</button>
 
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': aju.checasessao}"
+                        ng-click="altera( 'checasessao', 'aju' )"
+
+                    >Ajudante Checa Sessão</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': aju.cookies}"
+                        ng-click="altera( 'cookies', 'aju' )"
+
+                    >Ajudante Cookies</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': aju.data}"
+                        ng-click="altera( 'data', 'aju' )"
+
+                    >Ajudante Data</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': aju.pasta}"
+                        ng-click="altera( 'pasta', 'aju' )"
+
+                    >Ajudante Pasta</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': aju.sessao}"
+                        ng-click="altera( 'sessao', 'aju' )"
+
+                    >Ajudante Sessão</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': aju.texto}"
+                        ng-click="altera( 'texto', 'aju' )"
+
+                    >Ajudante Texto</button>
+
                 </div>
 
             </div>
 
-            <div class="col-md-9 ajudantes-content conteudo-lateral" ng-if="aju.carregando">
+            <?php
 
-                <h2 class="ajudantes-title">Carregamento de Ajudantes</h2>
+                require_once('carregaAjudante.php');
 
-                <p class="primeirospassos-text">
+                require_once('automaticaAjudante.php');
 
-                    O carregamento dos ajudantes são bem simples, dentro do seu modelo e/ou controlador, basta estar utilizando: <code>$this->load->ajudantes( array() );</code> e no mesmo você estará passando os nomes dos ajudantes ao qual irá utilizar. Por exemplo: <br>
-                    Tenho um ajudante chamado: <code>texto.php</code>, basta então chamar: <code>$this->load->ajudantes( array("texto") );</code> <br><br>
+                require_once('checasessaoAjudante.php');
 
-                    Para a criação de um ajudante chamado <code>texto.php</code> que será carregada dentro do modelo e/ou controlador, é preciso estar criando da seguinde maneira! <br><br>
+                require_once('cookiesAjudante.php');
 
-                    <?php
+                require_once('dataAjudante.php');
 
-                        highlight_string('<?php
+                require_once('pastaAjudante.php');
 
-    function retiraAcento($texto){
+                require_once('sessaoAjudante.php');
 
-        // Algoritmo
+                require_once('textoAjudante.php');
 
-    }
-
-?>');
-
-                    ?> <br><br>
-
-                    Para estar utilizando as funções, basta chamar o nome da função direto: <code>retiraAcento("olá mundo");</code>
-
-                </p>
-
-            </div>
-
-            <div class="col-md-9 ajudantes-content conteudo-lateral" ng-if="aju.automatico">
-
-                <h2 class="ajudantes-title">Carregamento Automático de Ajudantes</h2>
-
-                <p class="primeirospassos-text">
-
-                    O carregamento automático parte do arquivo <code>autocarregamento.php</code> que se encontra em <code>suaaplicacao/app/aplicacao/config/autocarregamento.php</code>, nele você encontrará <code>$autocarregar['ajudante'] = array();</code> e <code>$autocarregar['biblioteca'] = array();</code>, para realizar o autocarregamento do ajudante, basta passar o nome dele no array, por exemplo: <code>$autocarregar['ajudante'] = array("texto");</code>, ai todo o basta chama a função normalmente onde desejar do seu projeto.
-
-                </p>
-
-            </div>
+            ?>
 
         </div>
 

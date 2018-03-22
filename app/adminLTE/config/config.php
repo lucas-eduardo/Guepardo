@@ -48,13 +48,13 @@
 	*/
 	if( !PRODUCAO ){ // Se for false...
 
-		define('CAMINHO','http://localhost/Guepardo/admlte');
-		define('EXTERNOS','http://localhost/Guepardo/app/adminLTE/externos/');
+		define('CAMINHO','http://localhost/guepardo/admlte');
+		define('EXTERNOS','http://localhost/guepardo/app/adminLTE/externos/');
 
 	}else{ // Se não...
 
-		define('CAMINHO','http://localhost/Guepardo/admlte');
-		define('EXTERNOS','http://localhost/Guepardo/app/adminLTE/externos/');
+		define('CAMINHO','http://localhost/guepardo/admlte');
+		define('EXTERNOS','http://localhost/guepardo/app/adminLTE/externos/');
 
 	}
 

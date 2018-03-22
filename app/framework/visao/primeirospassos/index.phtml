@@ -81,6 +81,25 @@
 
                 <p class="primeirospassos-text">
 
+                    Primeiramente você precisa estar instalando o <a target="_blank" href="https://nodejs.org/en/">nodejs</a>. Depois do nodejs estar instalado, via terminal você vai entrar na raiz do seu projeto e digitar <code>npm install</code>, para instalar todas as dependencias do GRUNT.
+
+                    <br>
+
+                    Depois das dependencias instaladas, basta fazer a configuração do arquivo <code>Gruntfile.js</code> de acordo com o seu projeto, que está separado da seguinte maneira:
+
+                    <ul>
+
+                        <li>clean</li>
+                        <li>concat</li>
+                        <li>uglify</li>
+                        <li>cssmin</li>
+                        <li>htmlmin</li>
+                        <li>imagemin</li>
+
+                    </ul>
+
+                    <br>
+
                     Para dar ínicio, é necessário que você crie uma pasta da sua aplicação dentro da pasta <code>app</code>, ficando como a seguinte estrutura: <code>MinhaAplicacao/app/site</code>. <br>
 
                     Foi usado a pasta <strong>site</strong> como exemplo, dentro da mesma, é preciso ter as seguintes pastas: <br>
@@ -243,6 +262,9 @@
     // Define o nome da sessão
     define(\'SESSAOAPP\', \'\' );
 
+    // Define se a aplicação esta em produção ou não
+    define(\'PRODUCAO\', \'true\' );
+
 
 
     //---------------------------------------------------------------------------------------
@@ -252,7 +274,17 @@
     /*
     * Diretivas da aplicação
     */
-    define(\'CAMINHO\',\'http://localhost/minhaaplicacao\');
+    if( !PRODUCAO ){ // Se estiver em desenvolvimento...
+        
+        define(\'CAMINHO\',\'http://localhost/minhaaplicacao\');
+        define(\'EXTERNOS\',\'http://localhost/minhaaplicacao/app/projeto/externos\');
+
+    }else{ // Se não...
+
+        define(\'CAMINHO\',\'http://wwww.minhaaplicacao.com.br\');
+        define(\'EXTERNOS\',\'http://wwww.minhaaplicacao.com.br/app/projeto/externos/\');
+
+    }
 
     $caminho = str_replace(\'\\\', \'/\', APP_PATCH);
 

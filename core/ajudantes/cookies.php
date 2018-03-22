@@ -4,8 +4,8 @@
 	function criacookie( $nome, $valor, $duracao=null )
 	{
 
-		$duracao= (  is_null( $duracao ) )? ( time() + ( 120 * 24 * 3600 ) ) : $duracao;
-		setcookie( $nome, $valor,$duracao,"/" );
+		$duracao= (  is_null( $duracao ) )? ( time() + (60 * 60 * 24 * 30) ) : $duracao;
+		setcookie( $nome, $valor, $duracao, "/" );
 
 	}
 
@@ -15,7 +15,7 @@
 	{
 
 		unset($_COOKIE[$nome]);
-		setcookie( $nome, "", -1,"/");
+		setcookie( $nome, "", -1, "/");
 
 	}
 

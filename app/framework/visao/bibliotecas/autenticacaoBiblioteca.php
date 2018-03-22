@@ -20,11 +20,13 @@
 
             highlight_string('<?php
 
-    class loginControlador extends Controller{
+    class loginControlador extends Controller
+    {
 
 
         // Método que valida o login
-        public function acessarAcao(){
+        public function acessarAcao()
+        {
 
             // Instancia a biblioteca chave
             $this->load->biblioteca("autenticacao");
@@ -133,11 +135,13 @@
 
             highlight_string('<?php
 
-    class loginControlador extends Controller{
+    class loginControlador extends Controller
+    {
 
 
         // Método que realiza o logout
-        public function sairAcao(){
+        public function sairAcao()
+        {
 
             // Instancia a biblioteca chave
             $this->load->biblioteca("autenticacao");
@@ -198,11 +202,13 @@
 
             highlight_string('<?php
 
-    class loginControlador extends Controller{
+    class loginControlador extends Controller
+    {
 
 
         // Método que chega o login
-        public function checaAcao(){
+        public function checaAcao()
+        {
 
             // Instancia a biblioteca chave
             $this->load->biblioteca("autenticacao");
