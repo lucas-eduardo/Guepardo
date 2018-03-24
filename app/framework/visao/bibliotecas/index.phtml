@@ -1,0 +1,134 @@
+<section id="bibliotecas">
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h3 class="section-title">Bibliotecas</h3>
+
+                <div class="section-title-divider"></div>
+
+                <p class="section-description">
+
+                    As bibliotecas são classes de programação orientadas a objetos (POO) preparadas para realizar tarefas típicas no desenvolvimento web. Essas bibliotecas são mais especializadas em um tema particular. <br>
+                    Podemos dizer que as bibliotecas são um dos componentes que economizarão tempo na hora do desenvolvimento.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="menu-lateral">
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu"
+                        ng-class="{'active': bli.carregando}"
+                        ng-click="altera( 'carregando', 'bli' )"
+
+                    >Carregando biblioteca</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.automatico}"
+                        ng-click="altera( 'automatico', 'bli' )"
+
+                    >Carregamento automático</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.chave}"
+                        ng-click="altera( 'chave', 'bli' )"
+
+                    >Biblioteca Chave</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.redirecionador}"
+                        ng-click="altera( 'redirecionador', 'bli' )"
+
+                    >Biblioteca Redirecionador</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.autenticacao}"
+                        ng-click="altera( 'autenticacao', 'bli' )"
+
+                    >Biblioteca Autenticação</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.migalhas}"
+                        ng-click="altera( 'migalhas', 'bli' )"
+
+                    >Biblioteca Migalhas</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.phpmailer}"
+                        ng-click="altera( 'phpmailer', 'bli' )"
+
+                    >Biblioteca PHP Mailer</button>
+
+                    <button
+
+                        type="button"
+                        class="btn btn-gu mar-top10"
+                        ng-class="{'active': bli.imagem}"
+                        ng-click="altera( 'imagem', 'bli' )"
+
+                    >Biblioteca Imagem</button>
+
+                </div>
+
+            </div>
+
+            <?php
+
+                require_once('carregaBiblioteca.php');
+
+                require_once('automaticaBiblioteca.php');
+
+                require_once('chaveBiblioteca.php');
+
+                require_once('redirecionadorBiblioteca.php');
+
+                require_once('autenticacaoBiblioteca.php');
+
+                require_once('migalhasBiblioteca.php');
+
+                require_once('phpmailerBiblioteca.php');
+
+                require_once('imagemBiblioteca.php');
+
+            ?>
+
+        </div>
+
+    </div>
+
+</section>

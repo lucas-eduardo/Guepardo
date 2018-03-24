@@ -1,0 +1,61 @@
+<section id="entendacontrolador">
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <h3 class="section-title">Entendendo sobre Controlador ( CONTROLLERS )</h3>
+
+                <div class="section-title-divider"></div>
+
+                <p class="section-description">
+
+                    O responsável por receber todas as requisições do usuário. Seus métodos chamados actions são responsáveis por uma página, controlando qual model usar e qual view será mostrado ao usuário.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container wow fadeInUp">
+
+        <div class="row">
+
+            <div class="col-md-5 entendacontrolador-content">
+
+                <img src="<?php echo CAMINHO ?>/app/framework/externos/img/mvc.jpg" class="img-responsive img-thumbnail">
+
+            </div>
+
+            <div class="col-md-7 entendacontrolador-content">
+
+                <h2 class="entendacontrolador-title">Controller</h2>
+
+                <p class="entendacontrolador-text">
+
+                    Caso você acesse a seguinte url: <code>https://aplicacaoweb.com.br/cliente/cadastrar</code>, o Guepardo entenderá que o <code>cliente</code> é o controlador e o <code>cadastrar</code> é a ação que esta dentro do controlador <code>cliente</code>. Com isso ele tentará carregar o controlador chamado <code>clienteControlador.php</code> <br>
+
+                    Agora se você passar informações após o <code>cadastrar</code>, por exemplo: <code>https://aplicacaoweb.com.br/cliente/cadastrar/categoria/85145</code>, o Guepardo irá interpretar que <code>categoria</code> é o indie e o <code>85145</code> é valor do indice, isso é chamado de <code>parametros</code>!
+
+                </p>
+
+                <p class="entendacontrolador-text">
+
+                    O Guepardo trabalha com um padrão de prefixo e sufixo: <br>
+                    - <code>PREFIXO</code>: Nome de base do controlador. <br>
+                    - <code>SUFIXO</code>: Identificador padrão: "<code>Controlador</code>". <br>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
