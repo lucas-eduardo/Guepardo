@@ -43,7 +43,7 @@
 	/*
 	* Diretivas da aplicação
 	*/
-	if( !PRODUCAO ){ // Se for false...
+	if( PRODUCAO ){ // Se for true...
 
 		define('CAMINHO','http://localhost/particular/guepardo/admlte');
 		define('EXTERNOS','http://localhost/particular/guepardo/app/adminLTE/externos/');
