@@ -43,15 +43,15 @@
 	/*
 	* Diretivas da aplicação
 	*/
-	if( !PRODUCAO ){ // Se for false...
+	if( PRODUCAO ){ // Se for true...
 
-		define('CAMINHO','http://localhost/particular/guepardo');
-		define('EXTERNOS','http://localhost/particular/guepardo/app/framework/externos/');
+		define('CAMINHO','http://localhost');
+		define('EXTERNOS','http://localhost/dist/framework/externos/');
 
 	}else{ // Se não...
 
-		define('CAMINHO','http://localhost/particular/guepardo');
-		define('EXTERNOS','http://localhost/particular/guepardo/dist/framework/externos/');
+		define('CAMINHO','http://localhost');
+		define('EXTERNOS','http://localhost/app/framework/externos/');
 
 	}
 

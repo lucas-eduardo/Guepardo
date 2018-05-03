@@ -34,7 +34,8 @@
 
 	}else{
 
-		exit( 'A pasta do sistema nao esta correta, verifique a configuracao no arquivo index.php.' );
+		echo file_get_contents(PATCH_SYSTEM.'/errors/pastaSistema.html'); exit;
+		//exit( 'A pasta do sistema nao esta correta, verifique a configuracao no arquivo index.php.' );
 
 	}
 
@@ -53,7 +54,8 @@
 
 	}else{
 
-		exit( 'A pasta de sua aplicacao nao esta correta, verifique o arquivo index.php.' );
+		echo file_get_contents(PATCH_SYSTEM.'/errors/pastaAplicacao.html'); exit;
+		//exit( 'A pasta de sua aplicacao nao esta correta, verifique o arquivo index.php.' );
 
 	}
 
@@ -211,7 +213,8 @@
 							
 						}else{
 
-							throw new Exception("O método '$metodo' nao existe na classe '$classe'<br>");
+							//throw new Exception("O método '$metodo' nao existe na classe '$classe'<br>");
+							echo str_replace(["{METODO}", "{CLASSE}"], [$metodo, $classe], file_get_contents(PATCH_SYSTEM.'/errors/404Metodo.html'));
 
 						}
 
@@ -224,7 +227,8 @@
 
 				}else{
 
-					throw new Exception("A classe '$classe' nao existe no arquivo '$arquivo_controlador'<br>");
+					//throw new Exception("A classe '$classe' nao existe no arquivo '$arquivo_controlador'<br>");
+					echo str_replace(["{CLASSE}", "{ARQUIVO}"], [$classe, $arquivo_controlador], file_get_contents(PATCH_SYSTEM.'/errors/404Classe.html'));
 
 				}
 			}catch (Exception $e) {
@@ -236,7 +240,8 @@
 
 		}else{
 
-			throw new Exception('O arquivo controlador '.$arquivo_controlador.' nao foi encontrado<br>');
+			//throw new Exception('O arquivo controlador '.$arquivo_controlador.' nao foi encontrado<br>');
+			echo str_replace("{ARQUIVO}", $arquivo_controlador, file_get_contents(PATCH_SYSTEM.'/errors/404Controlador.html'));
 
 		}
 		

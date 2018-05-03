@@ -1,7 +1,7 @@
 RewriteEngine on
 
-# RewriteCond %{HTTP_HOST} ^link\.com\.br [NC]
-# RewriteRule (.*) http://www.link.com.br/$1 [R=301,L]
+# RewriteCond %{HTTP_HOST} ^localhost\.host [NC]
+# RewriteRule (.*) http://www.localhost.host/$1 [R=301,L]
 
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
@@ -19,19 +19,6 @@ RewriteRule ^(.*)$ index.php?requisicao=$1
     </IfModule>
 
 </FilesMatch>
-
-<IfModule mod_deflate.c>
-
-    # Compactar por tipo - html, text, css, xml
-    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
-
-    # Compactar por tipo - javascript
-    AddOutputFilterByType DEFLATE application/x-javascript application/javascript text/javascript text/x-js text/x-javascript
-
-    # Compactar por extensão
-    AddOutputFilter DEFLATE js css htm html xml ttf eot
-
-</IfModule>
 
 # Ativa o cache
 <FilesMatch "\.(?i:ico|gif|jpe?g|png|css|js|svg)$">
@@ -51,7 +38,7 @@ RewriteRule ^(.*)$ index.php?requisicao=$1
 
     <IfModule mod_expires.c>
 
-        ExpiresDefault "access plus 1 mouth"
+        ExpiresDefault "access plus 1 month"
 
     </IfModule>
 
@@ -73,7 +60,7 @@ RewriteRule ^(.*)$ index.php?requisicao=$1
 
     <IfModule mod_expires.c>
 
-        ExpiresDefault "access plus 6 mouths"
+        ExpiresDefault "access plus 6 months"
 
     </IfModule>
 
@@ -85,6 +72,8 @@ RewriteRule ^(.*)$ index.php?requisicao=$1
     FileETag None
 
 </FilesMatch>
+
+ErrorDocument 404 "<b>Nos nao conseguimos encontrar a pagina...</b><br><br>Desculpe, mas a pagina que voce esta procurando nao foi encontrada ou nao existe. Tente atualizar a pagina!"
 
 
 #php_flag display_startup_errors on
